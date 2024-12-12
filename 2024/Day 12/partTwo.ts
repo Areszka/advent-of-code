@@ -1,5 +1,3 @@
-// ALMOST working
-
 import input from "../../read-input.ts";
 
 const gardens = input.split("\n").map((row) => row.split(""));
@@ -65,7 +63,7 @@ function checkGardens(
   } else if (!equals(top, letter) && equals(topRight, letter) && equals(right, letter)) {
     tempCorners[point[0] + "-" + (point[1] + 1)] = true;
   } else if (!equals(top, letter) && equals(topRight, letter) && !equals(right, letter)) {
-    tempCorners[point[0] + "-" + (point[1] + 1)] = true;
+    tempCorners[point[0] + "-" + (point[1] + 1) + "a"] = true;
   } else if (!equals(top, letter) && !equals(topRight, letter) && !equals(right, letter)) {
     tempCorners[point[0] + "-" + (point[1] + 1)] = true;
   }
@@ -77,7 +75,7 @@ function checkGardens(
   } else if (!equals(top, letter) && equals(topLeft, letter) && equals(left, letter)) {
     tempCorners[point[0] + "-" + point[1]] = true;
   } else if (!equals(top, letter) && equals(topLeft, letter) && !equals(left, letter)) {
-    tempCorners[point[0] + "-" + point[1]] = true;
+    tempCorners[point[0] + "-" + point[1] + "b"] = true;
   } else if (!equals(top, letter) && !equals(topLeft, letter) && !equals(left, letter)) {
     tempCorners[point[0] + "-" + point[1]] = true;
   }
@@ -89,7 +87,7 @@ function checkGardens(
   } else if (!equals(bottom, letter) && equals(bottomLeft, letter) && equals(left, letter)) {
     tempCorners[point[0] + 1 + "-" + point[1]] = true;
   } else if (!equals(bottom, letter) && equals(bottomLeft, letter) && !equals(left, letter)) {
-    tempCorners[point[0] + 1 + "-" + point[1]] = true;
+    tempCorners[point[0] + 1 + "-" + point[1] + "c"] = true;
   } else if (!equals(bottom, letter) && !equals(bottomLeft, letter) && !equals(left, letter)) {
     tempCorners[point[0] + 1 + "-" + point[1]] = true;
   }
@@ -101,7 +99,7 @@ function checkGardens(
   } else if (!equals(bottom, letter) && equals(bottomRight, letter) && equals(right, letter)) {
     tempCorners[point[0] + 1 + "-" + (point[1] + 1)] = true;
   } else if (!equals(bottom, letter) && equals(bottomRight, letter) && !equals(right, letter)) {
-    tempCorners[point[0] + 1 + "-" + (point[1] + 1)] = true;
+    tempCorners[point[0] + 1 + "-" + (point[1] + 1) + "d"] = true;
   } else if (!equals(bottom, letter) && !equals(bottomRight, letter) && !equals(right, letter)) {
     tempCorners[point[0] + 1 + "-" + (point[1] + 1)] = true;
   }
